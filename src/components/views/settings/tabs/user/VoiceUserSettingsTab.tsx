@@ -124,6 +124,10 @@ export default class VoiceUserSettingsTab extends React.Component<{}, IState> {
         MatrixClientPeg.get().setForceTURN(!p2p);
     };
 
+    private changeWebRtcProcessing = (processing: boolean): void => {
+        MatrixClientPeg.get().setAudioProcessing(processing);
+    };
+
     private changeFallbackICEServerAllowed = (allow: boolean): void => {
         MatrixClientPeg.get().setFallbackICEServerAllowed(allow);
     };
@@ -193,6 +197,11 @@ export default class VoiceUserSettingsTab extends React.Component<{}, IState> {
                         name='webRtcAllowPeerToPeer'
                         level={SettingLevel.DEVICE}
                         onChange={this.changeWebRtcMethod}
+                    />
+                    <SettingsFlag
+                        name='webRtcUseAudioProcessing'
+                        level={SettingLevel.DEVICE}
+                        onChange={this.changeWebRtcProcessing}
                     />
                     <SettingsFlag
                         name='fallbackICEServerAllowed'

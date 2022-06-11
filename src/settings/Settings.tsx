@@ -667,6 +667,14 @@ export const SETTINGS: {[setting: string]: ISetting} = {
         default: true,
         invertedSettingName: 'webRtcForceTURN',
     },
+    "webRtcUseAudioProcessing": {
+        supportedLevels: LEVELS_DEVICE_ONLY_SETTINGS_WITH_CONFIG,
+        displayName: _td(
+            "Enable audio processing " +
+            "(if you're having issues with audio levels, disabling this can help)",
+        ),
+        default: true
+    },
     "webrtc_audiooutput": {
         supportedLevels: LEVELS_DEVICE_ONLY_SETTINGS,
         default: "default",
